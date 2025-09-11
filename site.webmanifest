@@ -1,0 +1,26 @@
+
+{
+  "name": "FrontCare Medical Center",
+  "short_name": "FrontCare",
+  "description": "Safe abortion clinic in Kampala offering medical abortion, surgical abortion, and reproductive healthcare services",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-512.png", 
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["medical", "health", "lifestyle"],
+  "lang": "en",
+  "scope": "/",
+  "orientation": "portrait-primary"
+}

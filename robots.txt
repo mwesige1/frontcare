@@ -1,0 +1,82 @@
+# File 1: robots.txt (save as robots.txt in your root directory)
+
+User-agent: *
+Allow: /
+
+# Important pages for search engines
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://frontcaremedicalcenter.site/sitemap.xml
+
+# Block any admin or private areas (add if you have them)
+# Disallow: /admin/
+# Disallow: /private/
+
+---
+
+# File 2: sitemap.xml (save as sitemap.xml in your root directory)
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://frontcaremedicalcenter.site/</loc>
+    <lastmod>2024-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://frontcaremedicalcenter.site/services/</loc>
+    <lastmod>2024-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://frontcaremedicalcenter.site/about/</loc>
+    <lastmod>2024-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://frontcaremedicalcenter.site/contact/</loc>
+    <lastmod>2024-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://frontcaremedicalcenter.site/faq/</loc>
+    <lastmod>2024-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
+
+---
+
+# File 3: site.webmanifest (save as site.webmanifest in your root directory)
+
+{
+  "name": "FrontCare Medical Center",
+  "short_name": "FrontCare",
+  "description": "Safe abortion clinic in Kampala offering medical abortion, surgical abortion, and reproductive healthcare services",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/icon-512.png", 
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["medical", "health", "lifestyle"],
+  "lang": "en",
+  "scope": "/",
+  "orientation": "portrait-primary"
+}
