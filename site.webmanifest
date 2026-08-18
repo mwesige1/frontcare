@@ -1,0 +1,52 @@
+{
+  "name": "Meriwell  Medical Center",
+  "short_name": "Meriwell ",
+  "description": "Safe, confidential abortion services and women's reproductive healthcare in Kampala, Uganda. Licensed doctors, 24/7 support.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2c5aa0",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "scope": "/",
+  "categories": ["medical", "health"],
+  "icons": [
+    {
+      "src": "/images/Meriwell .png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/Meriwell .png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Call Us Now",
+      "short_name": "Call",
+      "description": "Call Meriwell  Medical Center directly",
+      "url": "tel:+256759983865",
+      "icons": [{ "src": "/images/Meriwell .png", "sizes": "192x192" }]
+    },
+    {
+      "name": "WhatsApp Consultation",
+      "short_name": "WhatsApp",
+      "description": "Start a confidential WhatsApp consultation",
+      "url": "https://wa.me/256759983865",
+      "icons": [{ "src": "/images/Meriwell .png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Book Appointment",
+      "short_name": "Book",
+      "description": "Request a confidential consultation",
+      "url": "/#contact",
+      "icons": [{ "src": "/images/Meriwell .png", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
