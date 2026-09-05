@@ -9,12 +9,12 @@
   "theme_color": "#2563eb",
   "icons": [
     {
-      "src": "/images/FRONTCARE.png",
+      "src": "/images/frontlane1.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/images/FRONTCARE.png", 
+      "src": "/images/frontlane1.png", 
       "sizes": "512x512",
       "type": "image/png"
     }
