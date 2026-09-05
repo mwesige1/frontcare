@@ -1,0 +1,22 @@
+# File 1: robots.txt (save as robots.txt in your root directory)
+
+User-agent: *
+Allow: /
+
+# Important pages for search engines
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://frontlanemedicalcenter.site/sitemap.xml
+
+# Block any admin or private areas (add if you have them)
+# Disallow: /admin/
+# Disallow: /private/
+
+---
+
+# File 2: sitemap.xml (save as sitemap.xml in your root directory)
+
+
+---
+
