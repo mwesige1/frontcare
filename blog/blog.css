@@ -1,0 +1,1066 @@
+/* ═══════════════════════════════════════════════════════════════
+   FRONTLANE MEDICAL CENTER — BLOG STYLESHEET
+   Fully responsive · Hero images · Accessibility · Print-ready
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Page Containers ──────────────────────────────────────────── */
+.blog-page,
+.post-page {
+    padding: 40px 0 80px;
+    background: var(--bg-light);
+    min-height: 60vh;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESET — override global <header> sticky rule for post headers
+   The global styles.css sets `header { position: sticky; z-index: 1000 }`
+   which incorrectly applies to <header class="post-header">.
+   This override resets it back to normal flow.
+   ═══════════════════════════════════════════════════════════════ */
+header.post-header,
+.post-header {
+    position: static;
+    top: auto;
+    z-index: auto;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+
+/* ─── Breadcrumbs ──────────────────────────────────────────────── */
+/* Reset breadcrumb nav from global nav styles */
+nav.breadcrumbs,
+.breadcrumbs {
+    background: transparent;
+    padding: 10px 0;
+    position: static;
+    top: auto;
+    z-index: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+/* ─── Blog Header (Index Page) ─────────────────────────────────── */
+.blog-header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 50px;
+}
+
+.blog-header h1 {
+    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.blog-header-subtitle {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* ─── Blog Grid ────────────────────────────────────────────────── */
+.blog-articles {
+    margin-bottom: 50px;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* ─── Blog Card ────────────────────────────────────────────────── */
+.blog-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid transparent;
+}
+
+.blog-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--secondary-color);
+}
+
+.blog-image {
+    position: relative;
+    height: 220px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 9;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.05);
+}
+
+.blog-category {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--primary-color);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+}
+
+.blog-content {
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.blog-content h2 {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.blog-content h2 a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.blog-content h2 a:hover {
+    color: var(--secondary-color);
+}
+
+.blog-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    font-style: italic;
+}
+
+.blog-content p {
+    color: var(--text-light);
+    line-height: 1.65;
+    font-size: 0.97rem;
+    flex-grow: 1;
+    margin-bottom: 18px;
+}
+
+.read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    margin-top: auto;
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.read-more:hover {
+    color: var(--secondary-color);
+    transform: translateX(3px);
+}
+
+/* ─── Author Bio Strip (Blog Index) ────────────────────────────── */
+.blog-author-strip {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    background: white;
+    padding: 28px 32px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 50px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.blog-author-strip-photo {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-author-strip-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.blog-author-strip-fallback {
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.blog-author-strip-info h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.blog-author-strip-info p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.author-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    transition: var(--transition);
+}
+
+.author-link:hover {
+    color: var(--secondary-color);
+}
+
+/* ─── Blog CTA ─────────────────────────────────────────────────── */
+.blog-cta {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 50px 40px;
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.08), transparent 60%);
+    pointer-events: none;
+}
+
+.blog-cta h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.blog-cta p {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 1.05rem;
+    margin-bottom: 28px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.blog-cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   INDIVIDUAL BLOG POST STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+.post-page .container {
+    max-width: 820px;
+}
+
+/* ─── Post Header ──────────────────────────────────────────────── */
+.post-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.post-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.post-meta {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.post-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.post-author-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-light);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.92rem;
+    color: var(--text-dark);
+    text-decoration: none;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.post-author-badge:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   POST HERO IMAGE — Full-width, cinematic, responsive
+   ═══════════════════════════════════════════════════════════════ */
+.post-hero {
+    width: 100%;
+    height: 460px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 45px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 12px 40px rgba(44, 90, 160, 0.18);
+    position: relative;
+    isolation: isolate;
+}
+
+.post-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 60%,
+        rgba(0, 0, 0, 0.15) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 20px;
+}
+
+.post-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 1.2s ease;
+    animation: heroFadeIn 0.9s ease-out;
+}
+
+.post-hero:hover img {
+    transform: scale(1.02);
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(1.04);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ─── Post Content Body ────────────────────────────────────────── */
+.post-content {
+    background: white;
+    padding: 50px 55px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 40px;
+    line-height: 1.85;
+    font-size: 1.06rem;
+    color: var(--text-dark);
+}
+
+.post-content h2 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin: 40px 0 18px;
+    line-height: 1.3;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.post-content h2:first-child {
+    margin-top: 0;
+}
+
+.post-content h3 {
+    color: var(--primary-color);
+    font-size: 1.22rem;
+    margin: 30px 0 14px;
+    line-height: 1.35;
+    font-weight: 600;
+}
+
+.post-content p {
+    margin-bottom: 18px;
+}
+
+.post-content ul,
+.post-content ol {
+    margin: 18px 0 22px 25px;
+}
+
+.post-content li {
+    margin-bottom: 10px;
+    line-height: 1.75;
+}
+
+.post-content strong {
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.post-content em {
+    font-style: italic;
+    color: var(--text-dark);
+}
+
+.post-content a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-decoration-color: rgba(44, 90, 160, 0.3);
+    text-underline-offset: 3px;
+    transition: var(--transition);
+}
+
+.post-content a:hover {
+    color: var(--secondary-color);
+    text-decoration-color: var(--secondary-color);
+}
+
+.post-content blockquote {
+    border-left: 4px solid var(--primary-color);
+    background: var(--bg-light);
+    padding: 20px 25px;
+    margin: 25px 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--text-dark);
+}
+
+.post-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Table styling inside posts */
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 1rem;
+}
+
+.post-content table th {
+    background: var(--primary-color);
+    color: white;
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.post-content table td {
+    padding: 14px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post-content table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ─── Medical Disclaimer Box ───────────────────────────────────── */
+.post-disclaimer {
+    background: #fff8e1;
+    border-left: 4px solid #f39c12;
+    padding: 18px 22px;
+    border-radius: 0 8px 8px 0;
+    margin: 30px 0;
+    font-size: 0.94rem;
+    color: var(--text-dark);
+    line-height: 1.65;
+}
+
+.post-disclaimer strong {
+    color: #d68910;
+}
+
+.post-disclaimer ul {
+    margin: 12px 0 0 22px;
+}
+
+/* ─── Author Box (End of Post) ─────────────────────────────────── */
+.post-author-box {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-light);
+    margin-bottom: 40px;
+    border-left: 5px solid var(--primary-color);
+}
+
+.post-author-box-photo {
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-author-box-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.post-author-box-fallback {
+    display: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.post-author-box-info h3 {
+    font-size: 1.15rem;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.post-author-box-info p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 12px;
+}
+
+/* ─── Related Posts ────────────────────────────────────────────── */
+.post-related {
+    margin-bottom: 40px;
+}
+
+.post-related h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 22px;
+    font-weight: 700;
+}
+
+.post-related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.post-related-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--primary-color);
+    display: block;
+    height: 100%;
+}
+
+.post-related-card:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-medium);
+    border-left-color: var(--secondary-color);
+}
+
+.post-related-card h3 {
+    font-size: 1.05rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.post-related-card p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Tablet (max 1024px) ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .blog-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+    }
+
+    .post-hero {
+        height: 400px;
+        border-radius: 18px;
+    }
+
+    .post-content {
+        padding: 42px 40px;
+    }
+}
+
+/* ─── Mobile (max 768px) ───────────────────────────────────────── */
+@media (max-width: 768px) {
+    .blog-page,
+    .post-page {
+        padding: 30px 0 60px;
+    }
+
+    .breadcrumbs {
+        margin-bottom: 22px;
+        font-size: 0.85rem;
+    }
+
+    .blog-header {
+        margin-bottom: 35px;
+    }
+
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .blog-image {
+        height: 200px;
+    }
+
+    /* Blog index author strip */
+    .blog-author-strip {
+        flex-direction: column;
+        text-align: center;
+        padding: 26px 20px;
+        gap: 18px;
+    }
+
+    .blog-author-strip-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .blog-cta {
+        padding: 40px 22px;
+    }
+
+    .blog-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Post header */
+    .post-header {
+        margin-bottom: 30px;
+    }
+
+    .post-meta {
+        gap: 12px;
+        font-size: 0.88rem;
+    }
+
+    .post-author-badge {
+        font-size: 0.85rem;
+        padding: 7px 14px;
+        text-align: center;
+        white-space: normal;
+        line-height: 1.4;
+    }
+
+    /* Post hero — Mobile */
+    .post-hero {
+        height: 280px;
+        border-radius: 14px;
+        margin-bottom: 30px;
+        box-shadow: 0 8px 24px rgba(44, 90, 160, 0.15);
+    }
+
+    .post-hero::after {
+        border-radius: 14px;
+    }
+
+    /* Post body */
+    .post-content {
+        padding: 28px 22px;
+        font-size: 1rem;
+        line-height: 1.75;
+        border-radius: 12px;
+    }
+
+    .post-content h2 {
+        font-size: 1.35rem;
+        margin: 30px 0 14px;
+    }
+
+    .post-content h3 {
+        font-size: 1.12rem;
+        margin: 24px 0 12px;
+    }
+
+    .post-content ul,
+    .post-content ol {
+        margin-left: 20px;
+    }
+
+    .post-content table {
+        font-size: 0.9rem;
+    }
+
+    .post-content table th,
+    .post-content table td {
+        padding: 10px 8px;
+    }
+
+    /* Disclaimer */
+    .post-disclaimer {
+        padding: 16px 18px;
+        font-size: 0.9rem;
+    }
+
+    /* Author box */
+    .post-author-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+        gap: 18px;
+    }
+
+    .post-author-box-photo {
+        width: 85px;
+        height: 85px;
+    }
+
+    /* Related posts */
+    .post-related h2 {
+        font-size: 1.3rem;
+        margin-bottom: 18px;
+    }
+
+    .post-related-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .post-related-card {
+        padding: 20px;
+    }
+}
+
+/* ─── Small Mobile (max 480px) ─────────────────────────────────── */
+@media (max-width: 480px) {
+    .blog-page,
+    .post-page {
+        padding: 22px 0 50px;
+    }
+
+    .breadcrumbs {
+        font-size: 0.8rem;
+        gap: 4px;
+    }
+
+    .blog-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .blog-header-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .blog-image {
+        height: 180px;
+    }
+
+    .blog-content {
+        padding: 20px 18px;
+    }
+
+    .blog-content h2 {
+        font-size: 1.15rem;
+    }
+
+    .blog-content p {
+        font-size: 0.92rem;
+    }
+
+    /* Post hero — small mobile */
+    .post-hero {
+        height: 220px;
+        border-radius: 12px;
+        margin-bottom: 25px;
+    }
+
+    .post-hero::after {
+        border-radius: 12px;
+    }
+
+    /* Post content — small mobile */
+    .post-content {
+        padding: 24px 18px;
+        font-size: 0.97rem;
+        line-height: 1.7;
+        border-radius: 10px;
+    }
+
+    .post-content h2 {
+        font-size: 1.22rem;
+        margin: 26px 0 12px;
+    }
+
+    .post-content h3 {
+        font-size: 1.05rem;
+    }
+
+    .post-content table {
+        font-size: 0.85rem;
+    }
+
+    .post-content table th,
+    .post-content table td {
+        padding: 8px 6px;
+    }
+
+    /* Post author badge — stack on tiny screens */
+    .post-author-badge {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        gap: 6px;
+    }
+
+    /* Author box */
+    .post-author-box {
+        padding: 20px 16px;
+    }
+
+    .post-author-box-photo {
+        width: 75px;
+        height: 75px;
+    }
+
+    .post-author-box-info h3 {
+        font-size: 1.05rem;
+    }
+
+    .post-author-box-info p {
+        font-size: 0.9rem;
+    }
+
+    /* Blog CTA */
+    .blog-cta {
+        padding: 32px 18px;
+        border-radius: 12px;
+    }
+
+    .blog-cta h2 {
+        font-size: 1.35rem;
+    }
+
+    .blog-cta p {
+        font-size: 0.95rem;
+    }
+
+    .blog-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .blog-cta-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ACCESSIBILITY & UX ENHANCEMENTS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .post-hero img {
+        animation: none;
+        transition: none;
+    }
+
+    .post-hero:hover img {
+        transform: none;
+    }
+
+    .blog-card,
+    .blog-card:hover,
+    .blog-image img,
+    .post-related-card,
+    .post-related-card:hover {
+        transition: none;
+        transform: none;
+    }
+}
+
+/* Better keyboard focus */
+.blog-card:focus-within,
+.post-related-card:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+.post-author-badge:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+/* Smooth image loading — no layout shift */
+.blog-image,
+.post-hero,
+.blog-author-strip-photo,
+.post-author-box-photo {
+    background-color: #f0f4f8;
+}
+
+/* Better long-word handling for medical terms */
+.post-content p,
+.post-content li,
+.blog-content p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PRINT STYLES — for medical content people may print
+   ═══════════════════════════════════════════════════════════════ */
+@media print {
+    .top-bar,
+    header,
+    nav,
+    .sidebar,
+    .sidebar-overlay,
+    .floating-whatsapp,
+    .blog-cta,
+    .blog-author-strip,
+    .post-author-box,
+    .post-related,
+    .breadcrumbs,
+    .mobile-menu-btn {
+        display: none !important;
+    }
+
+    .post-page,
+    .blog-page {
+        background: white;
+        padding: 0;
+    }
+
+    .post-content {
+        box-shadow: none;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .post-hero {
+        height: 300px;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+
+    .post-disclaimer {
+        background: #f9f9f9;
+        border-left: 3px solid #999;
+    }
+
+    .post-content a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    .post-content a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.85em;
+        color: #666;
+    }
+}
